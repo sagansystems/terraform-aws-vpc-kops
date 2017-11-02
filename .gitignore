@@ -1,0 +1,6 @@
+.venv
+.terraform
+*.tfstate
+*.log
+input.json
+*.backup
