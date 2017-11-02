@@ -21,7 +21,7 @@ data "aws_vpc_peering_connection" "default" {
   vpc_id = "${var.backing_services_vpc_id}"
 }
 
-data "aws_nat_gateway" "k8" {
+data "aws_nat_gateway" "k8s" {
   count     = "${length(distinct(sort(data.aws_subnet_ids.k8s.ids)))}"
   subnet_id = "${element(distinct(sort(data.aws_subnet_ids.k8s.ids)), count.index)}"
 }
