@@ -10,9 +10,11 @@ data "external" "default" {
 
 data "aws_subnet_ids" "k8s" {
   vpc_id = "vpc-eca0ed8a"
-  #vpc_id = "${data.external.default.result.vpc_id}"
+
+  #  vpc_id = "${data.external.default.result.vpc_id}"
 }
 
+/**
 data "aws_route_table" "k8s" {
   count     = "${length(distinct(sort(data.aws_subnet_ids.k8s.ids)))}"
   subnet_id = "${element(distinct(sort(data.aws_subnet_ids.k8s.ids)), count.index)}"
@@ -22,3 +24,5 @@ data "aws_nat_gateway" "k8s" {
   count     = "${length(distinct(sort(data.aws_subnet_ids.k8s.ids)))}"
   subnet_id = "${element(distinct(sort(data.aws_subnet_ids.k8s.ids)), count.index)}"
 }
+**/
+
