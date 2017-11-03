@@ -9,7 +9,7 @@ data "external" "default" {
 }
 
 data "aws_subnet_ids" "k8s" {
-  vpc_id = "vpc-42fbfe3b"
+  vpc_id = "vpc-42fbfe3b"  
   #  vpc_id = "${data.external.default.result.vpc_id}"
 }
 
