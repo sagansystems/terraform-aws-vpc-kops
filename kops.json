@@ -1,0 +1,1273 @@
+{
+  "resources": [
+    {
+      "id": "i-0e84c3aec90c60738",
+      "raw": {
+        "AmiLaunchIndex": 0,
+        "Architecture": "x86_64",
+        "BlockDeviceMappings": [
+          {
+            "DeviceName": "/dev/xvda",
+            "Ebs": {
+              "AttachTime": "2017-10-12T23:51:17Z",
+              "DeleteOnTermination": true,
+              "Status": "attached",
+              "VolumeId": "vol-0677426ec550eec74"
+            }
+          }
+        ],
+        "ClientToken": "67db4743-de87-47db-b36f-29523e8a17aa_subnet-3f772e64_1",
+        "EbsOptimized": false,
+        "EnaSupport": null,
+        "Hypervisor": "xen",
+        "IamInstanceProfile": {
+          "Arn": "arn:aws:iam::616201835474:instance-profile/nodes.ram.galaxy.mertslounge.ca",
+          "Id": "AIPAIOV6C4JZYB3HO53D4"
+        },
+        "ImageId": "ami-ac58c0cc",
+        "InstanceId": "i-0e84c3aec90c60738",
+        "InstanceLifecycle": null,
+        "InstanceType": "t2.medium",
+        "KernelId": null,
+        "KeyName": "kubernetes.ram.galaxy.mertslounge.ca-3e:42:7a:10:fe:9e:88:3a:2c:69:68:20:26:b0:b7:bc",
+        "LaunchTime": "2017-10-12T23:51:17Z",
+        "Monitoring": {
+          "State": "enabled"
+        },
+        "NetworkInterfaces": [
+          {
+            "Association": null,
+            "Attachment": {
+              "AttachTime": "2017-10-12T23:51:17Z",
+              "AttachmentId": "eni-attach-fae9511d",
+              "DeleteOnTermination": true,
+              "DeviceIndex": 0,
+              "Status": "attached"
+            },
+            "Description": "",
+            "Groups": [
+              {
+                "GroupId": "sg-2754dd5a",
+                "GroupName": "nodes.ram.galaxy.mertslounge.ca"
+              }
+            ],
+            "Ipv6Addresses": null,
+            "MacAddress": "0a:58:72:6c:bc:5a",
+            "NetworkInterfaceId": "eni-c2de7dc0",
+            "OwnerId": "616201835474",
+            "PrivateDnsName": "ip-172-20-114-238.us-west-2.compute.internal",
+            "PrivateIpAddress": "172.20.114.238",
+            "PrivateIpAddresses": [
+              {
+                "Association": null,
+                "Primary": true,
+                "PrivateDnsName": "ip-172-20-114-238.us-west-2.compute.internal",
+                "PrivateIpAddress": "172.20.114.238"
+              }
+            ],
+            "SourceDestCheck": true,
+            "Status": "in-use",
+            "SubnetId": "subnet-3f772e64",
+            "VpcId": "vpc-eca0ed8a"
+          }
+        ],
+        "Placement": {
+          "Affinity": null,
+          "AvailabilityZone": "us-west-2c",
+          "GroupName": "",
+          "HostId": null,
+          "Tenancy": "default"
+        },
+        "Platform": null,
+        "PrivateDnsName": "ip-172-20-114-238.us-west-2.compute.internal",
+        "PrivateIpAddress": "172.20.114.238",
+        "ProductCodes": null,
+        "PublicDnsName": "",
+        "PublicIpAddress": null,
+        "RamdiskId": null,
+        "RootDeviceName": "/dev/xvda",
+        "RootDeviceType": "ebs",
+        "SecurityGroups": [
+          {
+            "GroupId": "sg-2754dd5a",
+            "GroupName": "nodes.ram.galaxy.mertslounge.ca"
+          }
+        ],
+        "SourceDestCheck": true,
+        "SpotInstanceRequestId": null,
+        "SriovNetSupport": null,
+        "State": {
+          "Code": 16,
+          "Name": "running"
+        },
+        "StateReason": null,
+        "StateTransitionReason": "",
+        "SubnetId": "subnet-3f772e64",
+        "Tags": [
+          {
+            "Key": "aws:autoscaling:groupName",
+            "Value": "nodes.ram.galaxy.mertslounge.ca"
+          },
+          {
+            "Key": "KubernetesCluster",
+            "Value": "ram.galaxy.mertslounge.ca"
+          },
+          {
+            "Key": "k8s.io/role/node",
+            "Value": "1"
+          },
+          {
+            "Key": "Cluster",
+            "Value": "ram.galaxy.mertslounge.ca"
+          },
+          {
+            "Key": "Name",
+            "Value": "nodes.ram.galaxy.mertslounge.ca"
+          }
+        ],
+        "VirtualizationType": "hvm",
+        "VpcId": "vpc-eca0ed8a"
+      },
+      "type": "instance"
+    },
+    {
+      "id": "vpc-eca0ed8a",
+      "raw": {
+        "CidrBlock": "172.20.0.0/16",
+        "DhcpOptionsId": "dopt-6571fb03",
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlockAssociationSet": null,
+        "IsDefault": false,
+        "State": "available",
+        "Tags": [
+          {
+            "Key": "KubernetesCluster",
+            "Value": "ram.galaxy.mertslounge.ca"
+          },
+          {
+            "Key": "kubernetes.io/cluster/ram.galaxy.mertslounge.ca",
+            "Value": "owned"
+          },
+          {
+            "Key": "Name",
+            "Value": "ram.galaxy.mertslounge.ca"
+          }
+        ],
+        "VpcId": "vpc-eca0ed8a"
+      },
+      "type": "vpc"
+    },
+    {
+      "id": "bastion-ram-galaxy-mertsl-45ubot",
+      "raw": {
+        "AvailabilityZones": [
+          "us-west-2a",
+          "us-west-2b",
+          "us-west-2c"
+        ],
+        "BackendServerDescriptions": null,
+        "CanonicalHostedZoneName": "bastion-ram-galaxy-mertsl-45ubot-578480747.us-west-2.elb.amazonaws.com",
+        "CanonicalHostedZoneNameID": "Z1H1FL5HABSF5",
+        "CreatedTime": "2017-10-12T23:51:02.28Z",
+        "DNSName": "bastion-ram-galaxy-mertsl-45ubot-578480747.us-west-2.elb.amazonaws.com",
+        "HealthCheck": {
+          "HealthyThreshold": 2,
+          "Interval": 10,
+          "Target": "TCP:22",
+          "Timeout": 5,
+          "UnhealthyThreshold": 2
+        },
+        "Instances": [
+          {
+            "InstanceId": "i-0417ee289e77a3902"
+          }
+        ],
+        "ListenerDescriptions": [
+          {
+            "Listener": {
+              "InstancePort": 22,
+              "InstanceProtocol": "TCP",
+              "LoadBalancerPort": 22,
+              "Protocol": "TCP",
+              "SSLCertificateId": null
+            },
+            "PolicyNames": null
+          }
+        ],
+        "LoadBalancerName": "bastion-ram-galaxy-mertsl-45ubot",
+        "Policies": {
+          "AppCookieStickinessPolicies": null,
+          "LBCookieStickinessPolicies": null,
+          "OtherPolicies": null
+        },
+        "Scheme": "internet-facing",
+        "SecurityGroups": [
+          "sg-3056df4d"
+        ],
+        "SourceSecurityGroup": {
+          "GroupName": "bastion-elb.ram.galaxy.mertslounge.ca",
+          "OwnerAlias": "616201835474"
+        },
+        "Subnets": [
+          "subnet-75b8083d",
+          "subnet-de762f85",
+          "subnet-f4c85b92"
+        ],
+        "VPCId": "vpc-eca0ed8a"
+      },
+      "type": "load-balancer"
+    },
+    {
+      "id": "sg-9557dee8",
+      "raw": {
+        "Description": "Security group for bastion",
+        "GroupId": "sg-9557dee8",
+        "GroupName": "bastion.ram.galaxy.mertslounge.ca",
+        "IpPermissions": [
+          {
+            "FromPort": 22,
+            "IpProtocol": "tcp",
+            "IpRanges": null,
+            "Ipv6Ranges": null,
+            "PrefixListIds": null,
+            "ToPort": 22,
+            "UserIdGroupPairs": [
+              {
+                "GroupId": "sg-3056df4d",
+                "GroupName": null,
+                "PeeringStatus": null,
+                "UserId": "616201835474",
+                "VpcId": null,
+                "VpcPeeringConnectionId": null
+              }
+            ]
+          }
+        ],
+        "IpPermissionsEgress": [
+          {
+            "FromPort": null,
+            "IpProtocol": "-1",
+            "IpRanges": [
+              {
+                "CidrIp": "0.0.0.0/0"
+              }
+            ],
+            "Ipv6Ranges": null,
+            "PrefixListIds": null,
+            "ToPort": null,
+            "UserIdGroupPairs": null
+          }
+        ],
+        "OwnerId": "616201835474",
+        "Tags": [
+          {
+            "Key": "KubernetesCluster",
+            "Value": "ram.galaxy.mertslounge.ca"
+          },
+          {
+            "Key": "Name",
+            "Value": "bastion.ram.galaxy.mertslounge.ca"
+          }
+        ],
+        "VpcId": "vpc-eca0ed8a"
+      },
+      "type": "security-group"
+    },
+    {
+      "id": "i-064b6770422cb765b",
+      "raw": {
+        "AmiLaunchIndex": 0,
+        "Architecture": "x86_64",
+        "BlockDeviceMappings": [
+          {
+            "DeviceName": "/dev/xvda",
+            "Ebs": {
+              "AttachTime": "2017-10-12T23:51:22Z",
+              "DeleteOnTermination": true,
+              "Status": "attached",
+              "VolumeId": "vol-06b1598dac097cadb"
+            }
+          },
+          {
+            "DeviceName": "/dev/xvdu",
+            "Ebs": {
+              "AttachTime": "2017-10-12T23:54:24Z",
+              "DeleteOnTermination": false,
+              "Status": "attached",
+              "VolumeId": "vol-03c694ec4ce418e87"
+            }
+          },
+          {
+            "DeviceName": "/dev/xvdv",
+            "Ebs": {
+              "AttachTime": "2017-10-12T23:54:25Z",
+              "DeleteOnTermination": false,
+              "Status": "attached",
+              "VolumeId": "vol-07b1e37bd986801df"
+            }
+          }
+        ],
+        "ClientToken": "5e99048f-918b-4de5-83ef-c59e7e8e0f7c_subnet-a0bd0de8_1",
+        "EbsOptimized": false,
+        "EnaSupport": null,
+        "Hypervisor": "xen",
+        "IamInstanceProfile": {
+          "Arn": "arn:aws:iam::616201835474:instance-profile/masters.ram.galaxy.mertslounge.ca",
+          "Id": "AIPAJ3EWNS7C6ZOCPSXFC"
+        },
+        "ImageId": "ami-ac58c0cc",
+        "InstanceId": "i-064b6770422cb765b",
+        "InstanceLifecycle": null,
+        "InstanceType": "t2.medium",
+        "KernelId": null,
+        "KeyName": "kubernetes.ram.galaxy.mertslounge.ca-3e:42:7a:10:fe:9e:88:3a:2c:69:68:20:26:b0:b7:bc",
+        "LaunchTime": "2017-10-12T23:51:21Z",
+        "Monitoring": {
+          "State": "enabled"
+        },
+        "NetworkInterfaces": [
+          {
+            "Association": null,
+            "Attachment": {
+              "AttachTime": "2017-10-12T23:51:21Z",
+              "AttachmentId": "eni-attach-da6368a2",
+              "DeleteOnTermination": true,
+              "DeviceIndex": 0,
+              "Status": "attached"
+            },
+            "Description": "",
+            "Groups": [
+              {
+                "GroupId": "sg-d656dfab",
+                "GroupName": "masters.ram.galaxy.mertslounge.ca"
+              }
+            ],
+            "Ipv6Addresses": null,
+            "MacAddress": "06:ff:09:0d:17:92",
+            "NetworkInterfaceId": "eni-b8e17888",
+            "OwnerId": "616201835474",
+            "PrivateDnsName": "ip-172-20-50-251.us-west-2.compute.internal",
+            "PrivateIpAddress": "172.20.50.251",
+            "PrivateIpAddresses": [
+              {
+                "Association": null,
+                "Primary": true,
+                "PrivateDnsName": "ip-172-20-50-251.us-west-2.compute.internal",
+                "PrivateIpAddress": "172.20.50.251"
+              }
+            ],
+            "SourceDestCheck": true,
+            "Status": "in-use",
+            "SubnetId": "subnet-a0bd0de8",
+            "VpcId": "vpc-eca0ed8a"
+          }
+        ],
+        "Placement": {
+          "Affinity": null,
+          "AvailabilityZone": "us-west-2a",
+          "GroupName": "",
+          "HostId": null,
+          "Tenancy": "default"
+        },
+        "Platform": null,
+        "PrivateDnsName": "ip-172-20-50-251.us-west-2.compute.internal",
+        "PrivateIpAddress": "172.20.50.251",
+        "ProductCodes": null,
+        "PublicDnsName": "",
+        "PublicIpAddress": null,
+        "RamdiskId": null,
+        "RootDeviceName": "/dev/xvda",
+        "RootDeviceType": "ebs",
+        "SecurityGroups": [
+          {
+            "GroupId": "sg-d656dfab",
+            "GroupName": "masters.ram.galaxy.mertslounge.ca"
+          }
+        ],
+        "SourceDestCheck": true,
+        "SpotInstanceRequestId": null,
+        "SriovNetSupport": null,
+        "State": {
+          "Code": 16,
+          "Name": "running"
+        },
+        "StateReason": null,
+        "StateTransitionReason": "",
+        "SubnetId": "subnet-a0bd0de8",
+        "Tags": [
+          {
+            "Key": "Name",
+            "Value": "master-us-west-2a.masters.ram.galaxy.mertslounge.ca"
+          },
+          {
+            "Key": "aws:autoscaling:groupName",
+            "Value": "master-us-west-2a.masters.ram.galaxy.mertslounge.ca"
+          },
+          {
+            "Key": "KubernetesCluster",
+            "Value": "ram.galaxy.mertslounge.ca"
+          },
+          {
+            "Key": "k8s.io/role/master",
+            "Value": "1"
+          },
+          {
+            "Key": "Cluster",
+            "Value": "ram.galaxy.mertslounge.ca"
+          }
+        ],
+        "VirtualizationType": "hvm",
+        "VpcId": "vpc-eca0ed8a"
+      },
+      "type": "instance"
+    },
+    {
+      "id": "sg-3056df4d",
+      "raw": {
+        "Description": "Security group for bastion ELB",
+        "GroupId": "sg-3056df4d",
+        "GroupName": "bastion-elb.ram.galaxy.mertslounge.ca",
+        "IpPermissions": [
+          {
+            "FromPort": 22,
+            "IpProtocol": "tcp",
+            "IpRanges": [
+              {
+                "CidrIp": "0.0.0.0/0"
+              }
+            ],
+            "Ipv6Ranges": null,
+            "PrefixListIds": null,
+            "ToPort": 22,
+            "UserIdGroupPairs": null
+          }
+        ],
+        "IpPermissionsEgress": [
+          {
+            "FromPort": null,
+            "IpProtocol": "-1",
+            "IpRanges": [
+              {
+                "CidrIp": "0.0.0.0/0"
+              }
+            ],
+            "Ipv6Ranges": null,
+            "PrefixListIds": null,
+            "ToPort": null,
+            "UserIdGroupPairs": null
+          }
+        ],
+        "OwnerId": "616201835474",
+        "Tags": [
+          {
+            "Key": "Name",
+            "Value": "bastion-elb.ram.galaxy.mertslounge.ca"
+          },
+          {
+            "Key": "KubernetesCluster",
+            "Value": "ram.galaxy.mertslounge.ca"
+          }
+        ],
+        "VpcId": "vpc-eca0ed8a"
+      },
+      "type": "security-group"
+    },
+    {
+      "id": "i-0417ee289e77a3902",
+      "raw": {
+        "AmiLaunchIndex": 0,
+        "Architecture": "x86_64",
+        "BlockDeviceMappings": [
+          {
+            "DeviceName": "/dev/xvda",
+            "Ebs": {
+              "AttachTime": "2017-10-12T23:51:17Z",
+              "DeleteOnTermination": true,
+              "Status": "attached",
+              "VolumeId": "vol-0bcf8c086f207caee"
+            }
+          }
+        ],
+        "ClientToken": "7a7dcd50-4502-4a7a-b7a8-b8e4d4b26c7c_subnet-f4c85b92_1",
+        "EbsOptimized": false,
+        "EnaSupport": null,
+        "Hypervisor": "xen",
+        "IamInstanceProfile": {
+          "Arn": "arn:aws:iam::616201835474:instance-profile/bastions.ram.galaxy.mertslounge.ca",
+          "Id": "AIPAIREWKQ4O7DT3J3PK6"
+        },
+        "ImageId": "ami-ac58c0cc",
+        "InstanceId": "i-0417ee289e77a3902",
+        "InstanceLifecycle": null,
+        "InstanceType": "t2.medium",
+        "KernelId": null,
+        "KeyName": "kubernetes.ram.galaxy.mertslounge.ca-3e:42:7a:10:fe:9e:88:3a:2c:69:68:20:26:b0:b7:bc",
+        "LaunchTime": "2017-10-12T23:51:17Z",
+        "Monitoring": {
+          "State": "enabled"
+        },
+        "NetworkInterfaces": [
+          {
+            "Association": {
+              "IpOwnerId": "amazon",
+              "PublicDnsName": "ec2-54-213-20-1.us-west-2.compute.amazonaws.com",
+              "PublicIp": "54.213.20.1"
+            },
+            "Attachment": {
+              "AttachTime": "2017-10-12T23:51:17Z",
+              "AttachmentId": "eni-attach-75b85194",
+              "DeleteOnTermination": true,
+              "DeviceIndex": 0,
+              "Status": "attached"
+            },
+            "Description": "",
+            "Groups": [
+              {
+                "GroupId": "sg-9557dee8",
+                "GroupName": "bastion.ram.galaxy.mertslounge.ca"
+              }
+            ],
+            "Ipv6Addresses": null,
+            "MacAddress": "02:2f:f3:c5:43:ba",
+            "NetworkInterfaceId": "eni-10cf6331",
+            "OwnerId": "616201835474",
+            "PrivateDnsName": "ip-172-20-4-81.us-west-2.compute.internal",
+            "PrivateIpAddress": "172.20.4.81",
+            "PrivateIpAddresses": [
+              {
+                "Association": {
+                  "IpOwnerId": "amazon",
+                  "PublicDnsName": "ec2-54-213-20-1.us-west-2.compute.amazonaws.com",
+                  "PublicIp": "54.213.20.1"
+                },
+                "Primary": true,
+                "PrivateDnsName": "ip-172-20-4-81.us-west-2.compute.internal",
+                "PrivateIpAddress": "172.20.4.81"
+              }
+            ],
+            "SourceDestCheck": true,
+            "Status": "in-use",
+            "SubnetId": "subnet-f4c85b92",
+            "VpcId": "vpc-eca0ed8a"
+          }
+        ],
+        "Placement": {
+          "Affinity": null,
+          "AvailabilityZone": "us-west-2b",
+          "GroupName": "",
+          "HostId": null,
+          "Tenancy": "default"
+        },
+        "Platform": null,
+        "PrivateDnsName": "ip-172-20-4-81.us-west-2.compute.internal",
+        "PrivateIpAddress": "172.20.4.81",
+        "ProductCodes": null,
+        "PublicDnsName": "ec2-54-213-20-1.us-west-2.compute.amazonaws.com",
+        "PublicIpAddress": "54.213.20.1",
+        "RamdiskId": null,
+        "RootDeviceName": "/dev/xvda",
+        "RootDeviceType": "ebs",
+        "SecurityGroups": [
+          {
+            "GroupId": "sg-9557dee8",
+            "GroupName": "bastion.ram.galaxy.mertslounge.ca"
+          }
+        ],
+        "SourceDestCheck": true,
+        "SpotInstanceRequestId": null,
+        "SriovNetSupport": null,
+        "State": {
+          "Code": 16,
+          "Name": "running"
+        },
+        "StateReason": null,
+        "StateTransitionReason": "",
+        "SubnetId": "subnet-f4c85b92",
+        "Tags": [
+          {
+            "Key": "Cluster",
+            "Value": "ram.galaxy.mertslounge.ca"
+          },
+          {
+            "Key": "KubernetesCluster",
+            "Value": "ram.galaxy.mertslounge.ca"
+          },
+          {
+            "Key": "Name",
+            "Value": "bastions.ram.galaxy.mertslounge.ca"
+          },
+          {
+            "Key": "k8s.io/role/bastion",
+            "Value": "1"
+          },
+          {
+            "Key": "aws:autoscaling:groupName",
+            "Value": "bastions.ram.galaxy.mertslounge.ca"
+          }
+        ],
+        "VirtualizationType": "hvm",
+        "VpcId": "vpc-eca0ed8a"
+      },
+      "type": "instance"
+    },
+    {
+      "id": "sg-0468e179",
+      "raw": {
+        "Description": "Security group for api ELB",
+        "GroupId": "sg-0468e179",
+        "GroupName": "api-elb.ram.galaxy.mertslounge.ca",
+        "IpPermissions": [
+          {
+            "FromPort": 443,
+            "IpProtocol": "tcp",
+            "IpRanges": [
+              {
+                "CidrIp": "0.0.0.0/0"
+              }
+            ],
+            "Ipv6Ranges": null,
+            "PrefixListIds": null,
+            "ToPort": 443,
+            "UserIdGroupPairs": null
+          }
+        ],
+        "IpPermissionsEgress": [
+          {
+            "FromPort": null,
+            "IpProtocol": "-1",
+            "IpRanges": [
+              {
+                "CidrIp": "0.0.0.0/0"
+              }
+            ],
+            "Ipv6Ranges": null,
+            "PrefixListIds": null,
+            "ToPort": null,
+            "UserIdGroupPairs": null
+          }
+        ],
+        "OwnerId": "616201835474",
+        "Tags": [
+          {
+            "Key": "Name",
+            "Value": "api-elb.ram.galaxy.mertslounge.ca"
+          },
+          {
+            "Key": "KubernetesCluster",
+            "Value": "ram.galaxy.mertslounge.ca"
+          }
+        ],
+        "VpcId": "vpc-eca0ed8a"
+      },
+      "type": "security-group"
+    },
+    {
+      "id": "i-0cf7885322d2f091f",
+      "raw": {
+        "AmiLaunchIndex": 0,
+        "Architecture": "x86_64",
+        "BlockDeviceMappings": [
+          {
+            "DeviceName": "/dev/xvda",
+            "Ebs": {
+              "AttachTime": "2017-10-12T23:51:20Z",
+              "DeleteOnTermination": true,
+              "Status": "attached",
+              "VolumeId": "vol-034ebbb9ed3aef657"
+            }
+          },
+          {
+            "DeviceName": "/dev/xvdu",
+            "Ebs": {
+              "AttachTime": "2017-10-12T23:54:09Z",
+              "DeleteOnTermination": false,
+              "Status": "attached",
+              "VolumeId": "vol-0e833dc64006f6e68"
+            }
+          },
+          {
+            "DeviceName": "/dev/xvdv",
+            "Ebs": {
+              "AttachTime": "2017-10-12T23:54:10Z",
+              "DeleteOnTermination": false,
+              "Status": "attached",
+              "VolumeId": "vol-0af6104b779bf204e"
+            }
+          }
+        ],
+        "ClientToken": "53359e58-30cf-4c95-82ec-75722654fe41_subnet-2ecc5f48_1",
+        "EbsOptimized": false,
+        "EnaSupport": null,
+        "Hypervisor": "xen",
+        "IamInstanceProfile": {
+          "Arn": "arn:aws:iam::616201835474:instance-profile/masters.ram.galaxy.mertslounge.ca",
+          "Id": "AIPAJ3EWNS7C6ZOCPSXFC"
+        },
+        "ImageId": "ami-ac58c0cc",
+        "InstanceId": "i-0cf7885322d2f091f",
+        "InstanceLifecycle": null,
+        "InstanceType": "t2.medium",
+        "KernelId": null,
+        "KeyName": "kubernetes.ram.galaxy.mertslounge.ca-3e:42:7a:10:fe:9e:88:3a:2c:69:68:20:26:b0:b7:bc",
+        "LaunchTime": "2017-10-12T23:51:20Z",
+        "Monitoring": {
+          "State": "enabled"
+        },
+        "NetworkInterfaces": [
+          {
+            "Association": null,
+            "Attachment": {
+              "AttachTime": "2017-10-12T23:51:20Z",
+              "AttachmentId": "eni-attach-a8bb5249",
+              "DeleteOnTermination": true,
+              "DeviceIndex": 0,
+              "Status": "attached"
+            },
+            "Description": "",
+            "Groups": [
+              {
+                "GroupId": "sg-d656dfab",
+                "GroupName": "masters.ram.galaxy.mertslounge.ca"
+              }
+            ],
+            "Ipv6Addresses": null,
+            "MacAddress": "02:07:83:86:f3:ba",
+            "NetworkInterfaceId": "eni-04cc6025",
+            "OwnerId": "616201835474",
+            "PrivateDnsName": "ip-172-20-70-38.us-west-2.compute.internal",
+            "PrivateIpAddress": "172.20.70.38",
+            "PrivateIpAddresses": [
+              {
+                "Association": null,
+                "Primary": true,
+                "PrivateDnsName": "ip-172-20-70-38.us-west-2.compute.internal",
+                "PrivateIpAddress": "172.20.70.38"
+              }
+            ],
+            "SourceDestCheck": true,
+            "Status": "in-use",
+            "SubnetId": "subnet-2ecc5f48",
+            "VpcId": "vpc-eca0ed8a"
+          }
+        ],
+        "Placement": {
+          "Affinity": null,
+          "AvailabilityZone": "us-west-2b",
+          "GroupName": "",
+          "HostId": null,
+          "Tenancy": "default"
+        },
+        "Platform": null,
+        "PrivateDnsName": "ip-172-20-70-38.us-west-2.compute.internal",
+        "PrivateIpAddress": "172.20.70.38",
+        "ProductCodes": null,
+        "PublicDnsName": "",
+        "PublicIpAddress": null,
+        "RamdiskId": null,
+        "RootDeviceName": "/dev/xvda",
+        "RootDeviceType": "ebs",
+        "SecurityGroups": [
+          {
+            "GroupId": "sg-d656dfab",
+            "GroupName": "masters.ram.galaxy.mertslounge.ca"
+          }
+        ],
+        "SourceDestCheck": true,
+        "SpotInstanceRequestId": null,
+        "SriovNetSupport": null,
+        "State": {
+          "Code": 16,
+          "Name": "running"
+        },
+        "StateReason": null,
+        "StateTransitionReason": "",
+        "SubnetId": "subnet-2ecc5f48",
+        "Tags": [
+          {
+            "Key": "KubernetesCluster",
+            "Value": "ram.galaxy.mertslounge.ca"
+          },
+          {
+            "Key": "Name",
+            "Value": "master-us-west-2b.masters.ram.galaxy.mertslounge.ca"
+          },
+          {
+            "Key": "k8s.io/role/master",
+            "Value": "1"
+          },
+          {
+            "Key": "Cluster",
+            "Value": "ram.galaxy.mertslounge.ca"
+          },
+          {
+            "Key": "aws:autoscaling:groupName",
+            "Value": "master-us-west-2b.masters.ram.galaxy.mertslounge.ca"
+          }
+        ],
+        "VirtualizationType": "hvm",
+        "VpcId": "vpc-eca0ed8a"
+      },
+      "type": "instance"
+    },
+    {
+      "id": "i-0e151dc5ce1c18ba6",
+      "raw": {
+        "AmiLaunchIndex": 0,
+        "Architecture": "x86_64",
+        "BlockDeviceMappings": [
+          {
+            "DeviceName": "/dev/xvda",
+            "Ebs": {
+              "AttachTime": "2017-10-12T23:51:20Z",
+              "DeleteOnTermination": true,
+              "Status": "attached",
+              "VolumeId": "vol-07b5f9fd5257eb497"
+            }
+          },
+          {
+            "DeviceName": "/dev/xvdu",
+            "Ebs": {
+              "AttachTime": "2017-10-12T23:54:18Z",
+              "DeleteOnTermination": false,
+              "Status": "attached",
+              "VolumeId": "vol-0c0add2a28178c80b"
+            }
+          },
+          {
+            "DeviceName": "/dev/xvdv",
+            "Ebs": {
+              "AttachTime": "2017-10-12T23:54:19Z",
+              "DeleteOnTermination": false,
+              "Status": "attached",
+              "VolumeId": "vol-0865fbcf02759c47a"
+            }
+          }
+        ],
+        "ClientToken": "0fbd141b-2e0f-4d20-a65b-034d15f01b83_subnet-3f772e64_1",
+        "EbsOptimized": false,
+        "EnaSupport": null,
+        "Hypervisor": "xen",
+        "IamInstanceProfile": {
+          "Arn": "arn:aws:iam::616201835474:instance-profile/masters.ram.galaxy.mertslounge.ca",
+          "Id": "AIPAJ3EWNS7C6ZOCPSXFC"
+        },
+        "ImageId": "ami-ac58c0cc",
+        "InstanceId": "i-0e151dc5ce1c18ba6",
+        "InstanceLifecycle": null,
+        "InstanceType": "t2.medium",
+        "KernelId": null,
+        "KeyName": "kubernetes.ram.galaxy.mertslounge.ca-3e:42:7a:10:fe:9e:88:3a:2c:69:68:20:26:b0:b7:bc",
+        "LaunchTime": "2017-10-12T23:51:20Z",
+        "Monitoring": {
+          "State": "enabled"
+        },
+        "NetworkInterfaces": [
+          {
+            "Association": null,
+            "Attachment": {
+              "AttachTime": "2017-10-12T23:51:20Z",
+              "AttachmentId": "eni-attach-29ea52ce",
+              "DeleteOnTermination": true,
+              "DeviceIndex": 0,
+              "Status": "attached"
+            },
+            "Description": "",
+            "Groups": [
+              {
+                "GroupId": "sg-d656dfab",
+                "GroupName": "masters.ram.galaxy.mertslounge.ca"
+              }
+            ],
+            "Ipv6Addresses": null,
+            "MacAddress": "0a:51:5d:97:aa:a0",
+            "NetworkInterfaceId": "eni-1ca2011e",
+            "OwnerId": "616201835474",
+            "PrivateDnsName": "ip-172-20-101-181.us-west-2.compute.internal",
+            "PrivateIpAddress": "172.20.101.181",
+            "PrivateIpAddresses": [
+              {
+                "Association": null,
+                "Primary": true,
+                "PrivateDnsName": "ip-172-20-101-181.us-west-2.compute.internal",
+                "PrivateIpAddress": "172.20.101.181"
+              }
+            ],
+            "SourceDestCheck": true,
+            "Status": "in-use",
+            "SubnetId": "subnet-3f772e64",
+            "VpcId": "vpc-eca0ed8a"
+          }
+        ],
+        "Placement": {
+          "Affinity": null,
+          "AvailabilityZone": "us-west-2c",
+          "GroupName": "",
+          "HostId": null,
+          "Tenancy": "default"
+        },
+        "Platform": null,
+        "PrivateDnsName": "ip-172-20-101-181.us-west-2.compute.internal",
+        "PrivateIpAddress": "172.20.101.181",
+        "ProductCodes": null,
+        "PublicDnsName": "",
+        "PublicIpAddress": null,
+        "RamdiskId": null,
+        "RootDeviceName": "/dev/xvda",
+        "RootDeviceType": "ebs",
+        "SecurityGroups": [
+          {
+            "GroupId": "sg-d656dfab",
+            "GroupName": "masters.ram.galaxy.mertslounge.ca"
+          }
+        ],
+        "SourceDestCheck": true,
+        "SpotInstanceRequestId": null,
+        "SriovNetSupport": null,
+        "State": {
+          "Code": 16,
+          "Name": "running"
+        },
+        "StateReason": null,
+        "StateTransitionReason": "",
+        "SubnetId": "subnet-3f772e64",
+        "Tags": [
+          {
+            "Key": "Name",
+            "Value": "master-us-west-2c.masters.ram.galaxy.mertslounge.ca"
+          },
+          {
+            "Key": "KubernetesCluster",
+            "Value": "ram.galaxy.mertslounge.ca"
+          },
+          {
+            "Key": "k8s.io/role/master",
+            "Value": "1"
+          },
+          {
+            "Key": "Cluster",
+            "Value": "ram.galaxy.mertslounge.ca"
+          },
+          {
+            "Key": "aws:autoscaling:groupName",
+            "Value": "master-us-west-2c.masters.ram.galaxy.mertslounge.ca"
+          }
+        ],
+        "VirtualizationType": "hvm",
+        "VpcId": "vpc-eca0ed8a"
+      },
+      "type": "instance"
+    },
+    {
+      "id": "sg-d656dfab",
+      "raw": {
+        "Description": "Security group for masters",
+        "GroupId": "sg-d656dfab",
+        "GroupName": "masters.ram.galaxy.mertslounge.ca",
+        "IpPermissions": [
+          {
+            "FromPort": 4003,
+            "IpProtocol": "tcp",
+            "IpRanges": null,
+            "Ipv6Ranges": null,
+            "PrefixListIds": null,
+            "ToPort": 65535,
+            "UserIdGroupPairs": [
+              {
+                "GroupId": "sg-2754dd5a",
+                "GroupName": null,
+                "PeeringStatus": null,
+                "UserId": "616201835474",
+                "VpcId": null,
+                "VpcPeeringConnectionId": null
+              }
+            ]
+          },
+          {
+            "FromPort": null,
+            "IpProtocol": "-1",
+            "IpRanges": null,
+            "Ipv6Ranges": null,
+            "PrefixListIds": null,
+            "ToPort": null,
+            "UserIdGroupPairs": [
+              {
+                "GroupId": "sg-d656dfab",
+                "GroupName": null,
+                "PeeringStatus": null,
+                "UserId": "616201835474",
+                "VpcId": null,
+                "VpcPeeringConnectionId": null
+              }
+            ]
+          },
+          {
+            "FromPort": 1,
+            "IpProtocol": "tcp",
+            "IpRanges": null,
+            "Ipv6Ranges": null,
+            "PrefixListIds": null,
+            "ToPort": 4001,
+            "UserIdGroupPairs": [
+              {
+                "GroupId": "sg-2754dd5a",
+                "GroupName": null,
+                "PeeringStatus": null,
+                "UserId": "616201835474",
+                "VpcId": null,
+                "VpcPeeringConnectionId": null
+              }
+            ]
+          },
+          {
+            "FromPort": 22,
+            "IpProtocol": "tcp",
+            "IpRanges": null,
+            "Ipv6Ranges": null,
+            "PrefixListIds": null,
+            "ToPort": 22,
+            "UserIdGroupPairs": [
+              {
+                "GroupId": "sg-9557dee8",
+                "GroupName": null,
+                "PeeringStatus": null,
+                "UserId": "616201835474",
+                "VpcId": null,
+                "VpcPeeringConnectionId": null
+              }
+            ]
+          },
+          {
+            "FromPort": 1,
+            "IpProtocol": "udp",
+            "IpRanges": null,
+            "Ipv6Ranges": null,
+            "PrefixListIds": null,
+            "ToPort": 65535,
+            "UserIdGroupPairs": [
+              {
+                "GroupId": "sg-2754dd5a",
+                "GroupName": null,
+                "PeeringStatus": null,
+                "UserId": "616201835474",
+                "VpcId": null,
+                "VpcPeeringConnectionId": null
+              }
+            ]
+          },
+          {
+            "FromPort": 443,
+            "IpProtocol": "tcp",
+            "IpRanges": null,
+            "Ipv6Ranges": null,
+            "PrefixListIds": null,
+            "ToPort": 443,
+            "UserIdGroupPairs": [
+              {
+                "GroupId": "sg-0468e179",
+                "GroupName": null,
+                "PeeringStatus": null,
+                "UserId": "616201835474",
+                "VpcId": null,
+                "VpcPeeringConnectionId": null
+              }
+            ]
+          },
+          {
+            "FromPort": null,
+            "IpProtocol": "4",
+            "IpRanges": null,
+            "Ipv6Ranges": null,
+            "PrefixListIds": null,
+            "ToPort": null,
+            "UserIdGroupPairs": [
+              {
+                "GroupId": "sg-2754dd5a",
+                "GroupName": null,
+                "PeeringStatus": null,
+                "UserId": "616201835474",
+                "VpcId": null,
+                "VpcPeeringConnectionId": null
+              }
+            ]
+          }
+        ],
+        "IpPermissionsEgress": [
+          {
+            "FromPort": null,
+            "IpProtocol": "-1",
+            "IpRanges": [
+              {
+                "CidrIp": "0.0.0.0/0"
+              }
+            ],
+            "Ipv6Ranges": null,
+            "PrefixListIds": null,
+            "ToPort": null,
+            "UserIdGroupPairs": null
+          }
+        ],
+        "OwnerId": "616201835474",
+        "Tags": [
+          {
+            "Key": "KubernetesCluster",
+            "Value": "ram.galaxy.mertslounge.ca"
+          },
+          {
+            "Key": "Name",
+            "Value": "masters.ram.galaxy.mertslounge.ca"
+          }
+        ],
+        "VpcId": "vpc-eca0ed8a"
+      },
+      "type": "security-group"
+    },
+    {
+      "id": "sg-2754dd5a",
+      "raw": {
+        "Description": "Security group for nodes",
+        "GroupId": "sg-2754dd5a",
+        "GroupName": "nodes.ram.galaxy.mertslounge.ca",
+        "IpPermissions": [
+          {
+            "FromPort": null,
+            "IpProtocol": "-1",
+            "IpRanges": null,
+            "Ipv6Ranges": null,
+            "PrefixListIds": null,
+            "ToPort": null,
+            "UserIdGroupPairs": [
+              {
+                "GroupId": "sg-2754dd5a",
+                "GroupName": null,
+                "PeeringStatus": null,
+                "UserId": "616201835474",
+                "VpcId": null,
+                "VpcPeeringConnectionId": null
+              },
+              {
+                "GroupId": "sg-d656dfab",
+                "GroupName": null,
+                "PeeringStatus": null,
+                "UserId": "616201835474",
+                "VpcId": null,
+                "VpcPeeringConnectionId": null
+              }
+            ]
+          },
+          {
+            "FromPort": 22,
+            "IpProtocol": "tcp",
+            "IpRanges": null,
+            "Ipv6Ranges": null,
+            "PrefixListIds": null,
+            "ToPort": 22,
+            "UserIdGroupPairs": [
+              {
+                "GroupId": "sg-9557dee8",
+                "GroupName": null,
+                "PeeringStatus": null,
+                "UserId": "616201835474",
+                "VpcId": null,
+                "VpcPeeringConnectionId": null
+              }
+            ]
+          }
+        ],
+        "IpPermissionsEgress": [
+          {
+            "FromPort": null,
+            "IpProtocol": "-1",
+            "IpRanges": [
+              {
+                "CidrIp": "0.0.0.0/0"
+              }
+            ],
+            "Ipv6Ranges": null,
+            "PrefixListIds": null,
+            "ToPort": null,
+            "UserIdGroupPairs": null
+          }
+        ],
+        "OwnerId": "616201835474",
+        "Tags": [
+          {
+            "Key": "KubernetesCluster",
+            "Value": "ram.galaxy.mertslounge.ca"
+          },
+          {
+            "Key": "Name",
+            "Value": "nodes.ram.galaxy.mertslounge.ca"
+          }
+        ],
+        "VpcId": "vpc-eca0ed8a"
+      },
+      "type": "security-group"
+    },
+    {
+      "id": "api-ram-galaxy-mertsloung-fr4qur",
+      "raw": {
+        "AvailabilityZones": [
+          "us-west-2a",
+          "us-west-2b",
+          "us-west-2c"
+        ],
+        "BackendServerDescriptions": null,
+        "CanonicalHostedZoneName": "api-ram-galaxy-mertsloung-fr4qur-1113249497.us-west-2.elb.amazonaws.com",
+        "CanonicalHostedZoneNameID": "Z1H1FL5HABSF5",
+        "CreatedTime": "2017-10-12T23:51:02.27Z",
+        "DNSName": "api-ram-galaxy-mertsloung-fr4qur-1113249497.us-west-2.elb.amazonaws.com",
+        "HealthCheck": {
+          "HealthyThreshold": 2,
+          "Interval": 10,
+          "Target": "TCP:443",
+          "Timeout": 5,
+          "UnhealthyThreshold": 2
+        },
+        "Instances": [
+          {
+            "InstanceId": "i-064b6770422cb765b"
+          },
+          {
+            "InstanceId": "i-0cf7885322d2f091f"
+          },
+          {
+            "InstanceId": "i-0e151dc5ce1c18ba6"
+          }
+        ],
+        "ListenerDescriptions": [
+          {
+            "Listener": {
+              "InstancePort": 443,
+              "InstanceProtocol": "TCP",
+              "LoadBalancerPort": 443,
+              "Protocol": "TCP",
+              "SSLCertificateId": null
+            },
+            "PolicyNames": null
+          }
+        ],
+        "LoadBalancerName": "api-ram-galaxy-mertsloung-fr4qur",
+        "Policies": {
+          "AppCookieStickinessPolicies": null,
+          "LBCookieStickinessPolicies": null,
+          "OtherPolicies": null
+        },
+        "Scheme": "internet-facing",
+        "SecurityGroups": [
+          "sg-0468e179"
+        ],
+        "SourceSecurityGroup": {
+          "GroupName": "api-elb.ram.galaxy.mertslounge.ca",
+          "OwnerAlias": "616201835474"
+        },
+        "Subnets": [
+          "subnet-75b8083d",
+          "subnet-de762f85",
+          "subnet-f4c85b92"
+        ],
+        "VPCId": "vpc-eca0ed8a"
+      },
+      "type": "load-balancer"
+    }
+  ]
+}

@@ -14,9 +14,9 @@ class Bridge:
 
 	def getVpcId(self, cluster_name):
 		#kops_json_string = subprocess.check_output(["kops", "toolbox", "dump", "--name", cluster_name, '-o', 'json'])
-		with open('kops.json') as data_file
+		with open('./kops.json') as data_file:
 			kops_json  = json.load(data_file)
-		#logging.info(kops_json_string)
+		logging.info(kops_json)
 		# convert string to python map
 		#kops_json = json.loads(kops_json_string)
 
