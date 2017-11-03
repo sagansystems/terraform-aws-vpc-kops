@@ -10,7 +10,7 @@ log_level = logging.INFO
 class Bridge:
 
 	def __init__(self):
-		logging.basicConfig(filename='tf_aws_vpc_kops_peering.log', level=log_level)
+		logging.basicConfig(filename='tf_aws_vpc_kops.log', level=log_level)
 
 	def getVpcId(self, cluster_name):		
 		#kops_json_string = subprocess.check_output(["kops", "toolbox", "dump", "--name", cluster_name, '-o', 'json'])
@@ -29,7 +29,8 @@ class Bridge:
 		print json.dumps({"vpc_id": vpc_id}, sort_keys=True)
 
 def main():
-	data = json.load(sys.stdin)
+	stdin = sys.stdin		
+	data = json.load(stdin)
 	cluster_name = data['cluster']
 	bridge = Bridge()
 	vpc_id = bridge.getVpcId(cluster_name)
