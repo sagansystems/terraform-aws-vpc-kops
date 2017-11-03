@@ -31,6 +31,7 @@ class Bridge:
 def main():
 	stdin = sys.stdin		
 	data = json.load(stdin)
+	logging.info(data)
 	cluster_name = data['cluster']
 	bridge = Bridge()
 	vpc_id = bridge.getVpcId(cluster_name)
