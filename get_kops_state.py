@@ -12,9 +12,9 @@ class Bridge:
 	def __init__(self):
 		logging.basicConfig(filename='tf_aws_vpc_kops_peering.log', level=log_level)
 
-	def getVpcId(self, cluster_name):
+	def getVpcId(self, cluster_name):		
 		#kops_json_string = subprocess.check_output(["kops", "toolbox", "dump", "--name", cluster_name, '-o', 'json'])
-		with open('./kops.json') as data_file:
+		with open('kops.json') as data_file:
 			kops_json  = json.load(data_file)
 		logging.info(kops_json)
 		# convert string to python map
