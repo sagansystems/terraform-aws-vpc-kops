@@ -17,7 +17,7 @@ data "aws_route_table" "k8s" {
   subnet_id = "${element(distinct(sort(data.aws_subnet_ids.k8s.ids)), count.index)}"
 }
 
-data "aws_nat_gateway" "k8s" {
-  count     = "${length(distinct(sort(data.aws_subnet_ids.k8s.ids)))}"
-  subnet_id = "${element(distinct(sort(data.aws_subnet_ids.k8s.ids)), count.index)}"
-}
+# data "aws_nat_gateway" "k8s" {
+#   count     = "${length(distinct(sort(data.aws_subnet_ids.k8s.ids)))}"
+#   subnet_id = "${element(distinct(sort(data.aws_subnet_ids.k8s.ids)), count.index)}"
+# }
