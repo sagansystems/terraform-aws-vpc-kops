@@ -13,10 +13,12 @@ class Bridge:
 		logging.basicConfig(filename='tf_aws_vpc_kops.log', level=log_level)
 
 	def getVpcId(self, cluster_name):		
-		kops_json_string = subprocess.check_output(["kops", "toolbox", "dump", "--name", cluster_name, '-o', 'json'])		
-		logging.info(kops_json_string)
+		#kops_json_string = subprocess.check_output(["kops", "toolbox", "dump", "--name", cluster_name, '-o', 'json'])		
+		with open('kops.json') as data_file:
+			kops_json = data_file.load 
+		#logging.info(kops_json_string)
 		# convert string to python map
-		kops_json = json.loads(kops_json_string)
+		#kops_json = json.loads(kops_json_string)
 
 		# get the vpc object
 		for resource in kops_json['resources']:
