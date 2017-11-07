@@ -3,7 +3,7 @@ output "k8s_vpc_id" {
 }
 
 output "k8s_nat_gateway_public_ips" {
-  value = "${data.aws_nat_gateway.*.public_ip}"
+  value = "${data.aws_nat_gateway.k8s.*.public_ip}"
 }
 
 output "k8s_subnet_ids" {
