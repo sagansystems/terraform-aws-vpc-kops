@@ -1,2 +1,5 @@
 # terraform-aws-vpc-kops
-Terraform Module to Create VPC peering connection to allow Kops and Gladly backing services to communicate
+
+Terraform module to lookup the VPC and Subnets for a [kops](https://github.com/kubernetes/kops) cluster
+
+This module uses the [kops toolbox](https://github.com/kubernetes/kops/blob/master/docs/cli/kops_toolbox.md) to lookup the VPC and Subnets.

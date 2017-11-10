@@ -1,4 +1,4 @@
-data "external" "default" {
+data "external" "kops_state" {
   program = ["python", "${path.module}/get_kops_state.py"]
 
   query = {
@@ -8,16 +8,6 @@ data "external" "default" {
   }
 }
 
-data "aws_subnet_ids" "k8s" {
-  vpc_id = "${data.external.default.result.vpc_id}"
+data "aws_subnet_ids" "kops" {
+  vpc_id = "${data.external.kops_state.result.vpc_id}"
 }
-
-data "aws_route_table" "k8s" {
-  count     = "${length(distinct(sort(data.aws_subnet_ids.k8s.ids)))}"
-  subnet_id = "${element(distinct(sort(data.aws_subnet_ids.k8s.ids)), count.index)}"
-}
-
-# data "aws_nat_gateway" "k8s" {
-#   count     = "${length(distinct(sort(data.aws_subnet_ids.k8s.ids)))}"
-#   subnet_id = "${element(distinct(sort(data.aws_subnet_ids.k8s.ids)), count.index)}"
-# }
