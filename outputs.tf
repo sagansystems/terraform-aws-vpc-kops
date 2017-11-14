@@ -1,5 +1,5 @@
 output "vpc_id" {
-  value = "${data.external.kops_state.result.vpc_id}"
+  value = "${data.aws_vpc.kops.id}"
 }
 
 output "subnet_ids" {
