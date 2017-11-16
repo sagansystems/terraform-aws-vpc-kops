@@ -9,7 +9,7 @@ data "aws_subnet_ids" "kops" {
   vpc_id = "${data.aws_vpc.kops.id}"
 }
 
-data "aws_security_group" "bastions" {
+data "aws_security_group" "bastion" {
   vpc_id = "${data.aws_vpc.kops.id}"
   name   = "bastion.${var.dns_zone}"
 
