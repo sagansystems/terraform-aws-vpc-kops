@@ -5,8 +5,20 @@ data "aws_vpc" "kops" {
   }
 }
 
-data "aws_subnet_ids" "kops" {
+data "aws_subnet_ids" "private" {
   vpc_id = "${data.aws_vpc.kops.id}"
+
+  tags {
+    "kubernetes.io/role/internal-elb" = "1"
+  }
+}
+
+data "aws_subnet_ids" "utility" {
+  vpc_id = "${data.aws_vpc.kops.id}"
+
+  tags {
+    "kubernetes.io/role/elb" = "1"
+  }
 }
 
 data "aws_security_group" "bastion" {
