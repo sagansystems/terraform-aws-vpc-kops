@@ -9,8 +9,7 @@ data "aws_subnet_ids" "private" {
   vpc_id = "${data.aws_vpc.kops.id}"
 
   tags {
-    Name   = "kubernetes.io/role/internal-elb"
-    Values = "1"
+    "kubernetes.io/role/internal-elb" = "1"
   }
 }
 
@@ -18,8 +17,7 @@ data "aws_subnet_ids" "utility" {
   vpc_id = "${data.aws_vpc.kops.id}"
 
   tags {
-    Name   = "kubernetes.io/role/elb"
-    Values = "1"
+    "kubernetes.io/role/elb" = "1"
   }
 }
 
