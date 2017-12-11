@@ -2,8 +2,12 @@ output "vpc_id" {
   value = "${data.aws_vpc.kops.id}"
 }
 
-output "subnet_ids" {
-  value = "${data.aws_subnet_ids.kops.ids}"
+output "private_subnet_ids" {
+  value = "${data.aws_subnet_ids.private.ids}"
+}
+
+output "utility_subnet_ids" {
+  value = "${data.aws_subnet_ids.utility.ids}"
 }
 
 output "bastion_security_group_arn" {
