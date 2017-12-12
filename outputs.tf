@@ -1,5 +1,5 @@
 output "vpc_id" {
-  value = "${data.aws_vpc.kops.*.id}"
+  value = "${join("", data.aws_vpc.kops.*.id)}"
 }
 
 output "private_subnet_ids" {
