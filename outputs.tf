@@ -11,25 +11,25 @@ output "utility_subnet_ids" {
 }
 
 output "bastion_security_group_arn" {
-  value = "${data.aws_security_group.bastion.*.arn}"
+  value = "${join("", data.aws_security_group.bastion.*.arn)}"
 }
 
 output "bastion_security_group_id" {
-  value = "${data.aws_security_group.bastion.*.id}"
+  value = "${join("", data.aws_subnet_ids.bastion.*.ids)}"
 }
 
 output "masters_security_group_arn" {
-  value = "${data.aws_security_group.masters.*.arn}"
+  value = "${join("", data.aws_security_group.masters.*.arn)}"
 }
 
 output "masters_security_group_id" {
-  value = "${data.aws_security_group.masters.*.id}"
+  value = "${join("", data.aws_security_group.masters.*.id)}"
 }
 
 output "nodes_security_group_arn" {
-  value = "${data.aws_security_group.nodes.*.arn}"
+  value = "${join("", data.aws_security_group.nodes.*.arn)}"
 }
 
 output "nodes_security_group_id" {
-  value = "${data.aws_security_group.nodes.*.id}"
+  value = "${join("", data.aws_security_group.nodes.*.id)}"
 }
