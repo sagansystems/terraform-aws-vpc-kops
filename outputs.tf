@@ -3,7 +3,7 @@ output "vpc_id" {
 }
 
 output "private_subnet_ids" {
-  value = "${data.aws_subnet_ids.*.private.*.ids}"
+  value = "${data.aws_subnet_ids.private.*.ids}"
 }
 
 output "utility_subnet_ids" {
