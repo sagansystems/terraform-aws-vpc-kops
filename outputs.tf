@@ -15,7 +15,7 @@ output "bastion_security_group_arn" {
 }
 
 output "bastion_security_group_id" {
-  value = "${join("", data.aws_subnet_ids.bastion.*.ids)}"
+  value = "${join("", data.aws_security_group.bastion.*.ids)}"
 }
 
 output "masters_security_group_arn" {
