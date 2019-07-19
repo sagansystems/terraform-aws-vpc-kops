@@ -1,7 +1,7 @@
 data "aws_vpc" "kops" {
   count = "${var.enabled == "true" ? 1 : 0}"
 
-  filter = {
+  filter {
     name   = "tag:Name"
     values = ["${var.dns_zone}"]
   }
