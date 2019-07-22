@@ -9,7 +9,7 @@ data "aws_vpc" "kops" {
 
 data "aws_subnet_ids" "private" {
   count  = "${var.enabled == "true" ? 1 : 0}"
-  vpc_id = "${data.aws_vpc.kops.id}"
+  vpc_id = "${data.aws_vpc.kops[count.index].id}"
 
   tags = {
     "kubernetes.io/role/internal-elb" = "1"
@@ -18,7 +18,7 @@ data "aws_subnet_ids" "private" {
 
 data "aws_subnet_ids" "utility" {
   count  = "${var.enabled == "true" ? 1 : 0}"
-  vpc_id = "${data.aws_vpc.kops.id}"
+  vpc_id = "${data.aws_vpc.kops[count.index].id}"
 
   tags = {
     "kubernetes.io/role/elb" = "1"
@@ -27,7 +27,7 @@ data "aws_subnet_ids" "utility" {
 
 data "aws_security_group" "bastion" {
   count  = "${var.enabled == "true" ? 1 : 0}"
-  vpc_id = "${data.aws_vpc.kops.id}"
+  vpc_id = "${data.aws_vpc.kops[count.index].id}"
   name   = "bastion.${var.dns_zone}"
 
   tags = {
@@ -38,7 +38,7 @@ data "aws_security_group" "bastion" {
 
 data "aws_security_group" "masters" {
   count  = "${var.enabled == "true" ? 1 : 0}"
-  vpc_id = "${data.aws_vpc.kops.id}"
+  vpc_id = "${data.aws_vpc.kops[count.index].id}"
   name   = "masters.${var.dns_zone}"
 
   tags = {
@@ -49,7 +49,7 @@ data "aws_security_group" "masters" {
 
 data "aws_security_group" "nodes" {
   count  = "${var.enabled == "true" ? 1 : 0}"
-  vpc_id = "${data.aws_vpc.kops.id}"
+  vpc_id = "${data.aws_vpc.kops[count.index].id}"
   name   = "nodes.${var.dns_zone}"
 
   tags = {
